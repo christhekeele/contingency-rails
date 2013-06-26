@@ -32,7 +32,6 @@ module Contingency
       # so it `rescue_from` in Contingency's error handler can catch it instead of Rack's.
       # Works in conjunction with a catchall route pointed at this controller action.
       def routing_error
-      require 'pry'; binding.pry
         raise ActionController::RoutingError, "No route matches [#{env['REQUEST_METHOD']}] #{env['PATH_INFO'].inspect}"
       end
 
